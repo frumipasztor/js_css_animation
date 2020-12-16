@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;800&display=swap");
+$font: "Dosis", sans-serif;
+$dark: #1a0006;
+$light: #f9e4b7;
+
+body {
+  background-color: $dark;
+}
+
+#root {
+  h1,
+  p {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-family: $font;
+    font-size: 48px;
+    color: $light;
+  }
+
+  h1 {
+    font-weight: 800;
+  }
+
+  p {
+    font-weight: 200;
+  }
+
+  &.clicked {
+    h1{ animation: rotate 4s infinite reverse;
+    }
+    p {
+      animation: rotate 4s infinite;
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0) translate(-50%, -50%);
+    
+  }
+  100% {
+    transform: rotate(360deg) translate(-50%, -50%);
+  }
+}
